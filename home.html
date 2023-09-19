@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protection</title>
+</head>
+<body>
+    <h1>Protected Page</h1>
+    <p>Please enter the password to access this page:</p>
+    <form id="password-form">
+        <input type="password" id="password" placeholder="Password">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // Define the correct password
+        const correctPassword = "your_password_here";
+
+        // Function to handle form submission
+        document.getElementById("password-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+
+            // Get the entered password
+            const enteredPassword = document.getElementById("password").value;
+
+            // Check if the entered password matches the correct password
+            if (enteredPassword === correctPassword) {
+                // Redirect to the protected page (replace 'protected.html' with your actual page URL)
+                window.location.href = "protected.html";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
